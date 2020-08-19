@@ -1,6 +1,6 @@
 ---
 - name: dat ip cho loobpack
-  hosts: abel2
+  hosts: all
   gather_facts: no
   tasks:
      - name: Set loopback IPv4 address
