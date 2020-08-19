@@ -1,0 +1,19 @@
+---
+- name: dat ip cho loobpack
+  host: abel2
+  task:
+     - name: Set loopback IPv4 address
+       ios_l3_interface:
+          name: loopback "{{item.name}}"
+          ipv4:   {{}}
+     - name: no shut
+       ios_interface:
+            name: Ethernet"{{item.name1}}"
+            state: present
+     - name: show ip
+       ios_command:
+          command:
+            - show ip int br
+       register: show_ip
+     - debug: var=show_ip.stdout_lines
+  
