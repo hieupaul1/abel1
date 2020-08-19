@@ -2,7 +2,7 @@
 - name: dat ip cho loobpack
   hosts: abel2
   gather_facts: no
-  task:
+  tasks:
      - name: Set loopback IPv4 address
        ios_l3_interface:
           name: loopback {{item.name}}
